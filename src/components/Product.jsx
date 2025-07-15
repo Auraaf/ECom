@@ -6,8 +6,8 @@ const Product = ({product}) => {
   <div className="container px-5 py-24 mx-auto">
     <div className="flex justify-evenly flex-wrap -m-4">
         {
-            product.map((item)=>(
-              <Link to={'/ProductPage/${item.id}'} className="lg:w-[30%] md:w-1/2 p-3 m-[.5rem] bg-gray-100 w-full rounded cursor-pointer hover:shadow-xl" key={item.id}>
+            product.sort((a, b) => a.price - b.price).map((item)=>(
+              <Link to={`/ProductPage/${item.id}`} className="lg:w-[30%] md:w-1/2 p-3 m-[.5rem] bg-gray-100 w-full rounded cursor-pointer hover:shadow-xl-yellow" key={item.id}>
                 <a className="block relative h-48 rounded overflow-hidden">
                   <img
                     alt="ecommerce"
