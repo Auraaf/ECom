@@ -22,7 +22,10 @@ const Product = ({product}) => {
                   <h2 className="text-gray-900 title-font text-lg font-medium">
                     {item.title}
                   </h2>
-                  <p className="mt-1 text-yellow-500 font-semibold">${item.price}</p>
+                  <p className="mt-1 text-yellow-500 font-semibold">
+                    <span className="text-red-500 line-through">${item.price}</span>
+                    <span className="ml-2">${(item.price * 0.9).toFixed(2)}</span>
+                  </p>
                 </div>
               </Link>
             ))
