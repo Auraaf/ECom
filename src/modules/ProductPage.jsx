@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Loadrer from "../utiliy/Loadrer";
+import Loader from "../utility/Loader.jsx";
 
 const ProductPage = () => {
     const { id } = useParams();
@@ -29,7 +29,7 @@ const ProductPage = () => {
               ...item,
               quantity : item.quantity + 1
             }
-          } 
+          }
           return item
         })
         localStorage.setItem('cart',JSON.stringify(upatedCart))
@@ -38,7 +38,7 @@ const ProductPage = () => {
       }
     }
 
-   if(!Object.keys(product).length > 0) return <Loadrer />
+   if(!Object.keys(product).length > 0) return <Loader />
   return (
     <section className="text-gray-400 body-font overflow-hidden">
     <div className="container px-5 py-24 mx-auto">
